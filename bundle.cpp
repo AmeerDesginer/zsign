@@ -596,18 +596,6 @@ bool ZAppBundle::SignFolder(ZSignAsset *pSignAsset,
 	}
 
 
-    std::string filePath = m_strAppFolder.c_str() + "/embedded.mobileprovision";
-
-    // Try to open the file to check if it exists
-    std::FILE* file = std::fopen(filePath.c_str(), "r");
-    if (file != nullptr)
-    {
-        // Close the file if it is opened
-        std::fclose(file);
-        // File exists, attempt to delete it
-		std::remove(filePath.c_str())
-    }
-
 	// if (!WriteFile(pSignAsset->m_strProvisionData, "%s/embedded.mobileprovision", m_strAppFolder.c_str()))
 	// { //embedded.mobileprovision
 	// 	ZLog::ErrorV(">>> Can't Write embedded.mobileprovision!\n");
